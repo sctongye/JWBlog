@@ -9,7 +9,7 @@ JW Blog - Full Stack Blog System with Django + Vue3
 
 ---
 
-> 🌏 **在线演示 Demo**：[http://wangjiayu.com/blog](https://wangjiayu.com/blog)
+> 🌏 **在线演示 Demo**：[http://wangjiayu.com/blog](http://wangjiayu.com/blog)
 
 ---
 
