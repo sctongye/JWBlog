@@ -9,7 +9,7 @@ JW Blog - Full Stack Blog System with Django + Vue3
 
 ---
 
-> 🌏 **在线演示 Demo**：[https://wangjiayu.com/blog](https://wangjiayu.com/blog)
+> 🌏 **在线演示 Demo**：[http://wangjiayu.com/blog](https://wangjiayu.com/blog)
 
 ---
 
@@ -200,8 +200,8 @@ This project is licensed under [CC BY-NC 4.0](https://creativecommons.org/licens
 
 ## 📬 联系与交流 | Contact
 
-- 博主主页 Homepage：[https://wangjiayu.com](https://wangjiayu.com)
-- 博客演示 Demo：[https://wangjiayu.com/blog](https://wangjiayu.com/blog)
+- 博主主页 Homepage：[http://wangjiayu.com](http://wangjiayu.com)
+- 博客演示 Demo：[http://wangjiayu.com/blog](http://wangjiayu.com/blog)
 - Issues 或 PR 欢迎交流与改进！  
   Issues or PRs are welcome for discussion and improvement!
 
@@ -210,72 +210,3 @@ This project is licensed under [CC BY-NC 4.0](https://creativecommons.org/licens
 **Enjoy Blogging! 🚀 | 祝你写博愉快！**
 
 ---
-
-## 📝 如何上传项目到 GitHub 并忽略隐私/本地文件  
-How to Upload Your Project to GitHub and Ignore Private/Local Files
-
-### 1. 创建 .gitignore 文件  
-Create a `.gitignore` file in your project root (如果已有可直接编辑)：
-
-```gitignore
-# Python
-*.pyc
-__pycache__/
-db.sqlite3
-media/
-.env
-venv/
-# VSCode
-.vscode/
-# Node
-node_modules/
-dist/
-# OS
-.DS_Store
-Thumbs.db
-```
-> 你可以根据实际情况添加更多不需要上传的文件夹和文件。  
-> Add more files/folders as needed for your project.
-
-### 2. 初始化 Git 仓库  
-Initialize Git repository
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-```
-
-### 3. 创建远程仓库  
-Create a new repository on [GitHub](https://github.com/) (e.g. `JWBlog`).
-
-### 4. 关联远程仓库  
-Link to remote repository
-
-```bash
-git remote add origin https://github.com/your-username/your-repo-name.git
-```
-
-### 5. 推送到 GitHub  
-Push to GitHub
-
-```bash
-git push -u origin main
-```
-> 如果你用的是 `master` 分支，最后一条命令应为 `git push -u origin master`  
-> If you use `master` branch, use `git push -u origin master` instead.
-
----
-
-**注意事项 Tips**  
-- **不要上传包含敏感信息的文件**（如 `.env`、数据库、用户上传的图片等）。  
-  Do **not** upload sensitive files (e.g. `.env`, database, user uploads, etc.).
-- **.gitignore** 文件能帮你自动忽略这些内容。  
-  Use `.gitignore` to automatically ignore these files.
-- **首次推送后，后续只需 `git add .`、`git commit -m "msg"`、`git push` 即可。**  
-  After the first push, just use `git add .`, `git commit -m "msg"`, and `git push` for future updates.
-
----
-
-如需进一步帮助，欢迎提 Issue 或联系我！  
-For further help, feel free to open an Issue or contact me! 
