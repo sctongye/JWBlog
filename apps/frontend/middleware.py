@@ -5,7 +5,7 @@ from .models import VisitLog
 import os
 from django.conf import settings
 
-EXCLUDED_IPS = {'127.0.0.1', '71.142.126.4'}
+EXCLUDED_IPS = {'127.0.0.1', 'Your Public IP'}
 GEOIP_PATH = os.path.join(settings.BASE_DIR, 'geo', 'GeoLite2-City.mmdb')
 GEO_READER = geoip2.database.Reader(GEOIP_PATH)
 
