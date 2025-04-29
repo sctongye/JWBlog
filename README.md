@@ -9,7 +9,11 @@ JW Blog - Full Stack Blog System with Django + Vue3
 
 ---
 
+<<<<<<< HEAD
 > 🌏 **在线演示 Demo**：[https://wangjiayu.com/blog](https://wangjiayu.com/blog)
+=======
+> 🌏 **在线演示 Demo**：[http://wangjiayu.com/blog](http://wangjiayu.com/blog)
+>>>>>>> 2c33e3fe46c39ac0d829067fa3af64186bf6125f
 
 ---
 
@@ -200,8 +204,13 @@ This project is licensed under [CC BY-NC 4.0](https://creativecommons.org/licens
 
 ## 📬 联系与交流 | Contact
 
+<<<<<<< HEAD
 - 博主主页 Homepage：[https://wangjiayu.com](https://wangjiayu.com)
 - 博客演示 Demo：[https://wangjiayu.com/blog](https://wangjiayu.com/blog)
+=======
+- 博主主页 Homepage：[http://wangjiayu.com](http://wangjiayu.com)
+- 博客演示 Demo：[http://wangjiayu.com/blog](http://wangjiayu.com/blog)
+>>>>>>> 2c33e3fe46c39ac0d829067fa3af64186bf6125f
 - Issues 或 PR 欢迎交流与改进！  
   Issues or PRs are welcome for discussion and improvement!
 
@@ -210,6 +219,7 @@ This project is licensed under [CC BY-NC 4.0](https://creativecommons.org/licens
 **Enjoy Blogging! 🚀 | 祝你写博愉快！**
 
 ---
+<<<<<<< HEAD
 
 ## 📝 如何上传项目到 GitHub 并忽略隐私/本地文件  
 How to Upload Your Project to GitHub and Ignore Private/Local Files
@@ -279,3 +289,5 @@ git push -u origin main
 
 如需进一步帮助，欢迎提 Issue 或联系我！  
 For further help, feel free to open an Issue or contact me! 
+=======
+>>>>>>> 2c33e3fe46c39ac0d829067fa3af64186bf6125f
