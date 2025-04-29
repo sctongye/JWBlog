@@ -1,0 +1,19 @@
+# Python
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+.env
+venv4win/
+# VSCode
+.vscode/
+# Node
+node_modules/
+dist/
+# OS
+.DS_Store
+Thumbs.db
+static/referee_records/
+NOTE
+config/
+tests.py

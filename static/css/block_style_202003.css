@@ -1,0 +1,267 @@
+
+header {
+    color: #999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1.5em 0;
+}
+
+.navigation {
+    float: right;
+}
+
+.navigation a:not(.self) {
+    color: inherit;
+}
+
+.up_date {
+    font-size: 12px;
+}
+
+#jw_profile {
+    height: 180px;
+}
+
+.resume {
+    font-family: 'Lora', serif;
+}
+
+.skill-icons {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.skill-icons li {
+    float: left;
+    display: flex;
+    padding: 1px;
+    list-style-position: outside;
+    list-style-type: none;
+    /*margin: 12px;*/
+    /*font-size: 36px;*/
+    /*width: 10px;*/
+    text-align: center;
+    text-decoration: none;
+}
+
+/*在这里改首页Icon大小*/
+.skill-icon {
+    padding: 3px;
+    width: 36px;
+    height: 36px;
+    font-size: 36px;
+    /*margin: 10px;*/
+}
+
+.skill-icon:hover {
+    opacity: 90%;
+}
+
+.gists {
+    max-width: 1100px;
+}
+
+.gists .gist {
+    background-position: 50% 0%;
+    border: solid 1px #eee;
+    border-right: solid 2px #ccc;
+    border-bottom: solid 2px #ccc;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    line-height: normal;
+    margin: 0 20px 20px 0;
+    position: relative;
+    text-shadow: 1px 1px 0 #fbfbff, 1px -1px 0 #fbfbff, -1px 1px 0 #fbfbff, -1px -1px 0 #fbfbff;
+    -webkit-transition: ease 750ms background-position;
+    -moz-transition: ease 750ms background-position;
+    -ms-transition: ease 750ms background-position;
+    -o-transition: ease 750ms background-position;
+    transition: ease 750ms background-position;
+    /*width: 232px;*/
+    width: 255px;
+    padding: 10px 10px;
+}
+
+.gists .gist--thumbnail {
+    height: 82px;
+    color: #000;
+}
+
+.gists .gist:hover,
+.gists .gist:focus {
+    background-color: #eee;
+    background-position: 50% 100%;
+    text-decoration: none;
+}
+
+.gists .gist-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 55px;
+}
+
+.gists .gist-author {
+    color: #777;
+    font-weight: 300;
+}
+
+.gists .gist:hover .gist-underline {
+    text-decoration: underline;
+}
+
+.index-pop svg {
+    text-decoration: none !important;
+    margin-left: 0.3em;
+    position: relative;
+    top: 3px;
+}
+
+.card {
+    font-size: 14px;
+    font-family: "Oswald", sans-serif;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    /*height: 500px;*/
+}
+
+.card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+}
+
+.card-img-top {
+    display: block;
+    width: 100% !important;
+    height: 150px !important;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2857em;
+}
+
+.card-text {
+    font-family: "Oswald", sans-serif;
+    clear: both;
+    margin-top: .5em;
+    color: rgba(0, 0, 0, .68);
+}
+
+.card-footer {
+    font-size: 1em;
+    position: static;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: .55em 1em;
+    color: rgba(0, 0, 0, .4);
+    border-top: 1px solid rgba(0, 0, 0, .05) !important;
+    background: #fff;
+}
+
+.card-inverse .btn {
+    border: 1px solid rgba(0, 0, 0, .05);
+}
+
+.profile {
+    position: absolute;
+    top: -12px;
+    display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.profile-avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-inline {
+    position: relative;
+    top: 0;
+    display: inline-block;
+}
+
+.profile-inline ~ .card-title {
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: top;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.meta {
+    font-size: 1em;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a:hover {
+    color: rgba(0, 0, 0, .87);
+}
+
+.sidebar {
+    will-change: min-height;
+}
+
+.sidebar__inner {
+    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: position, transform;
+}
+
+.job_title p {
+    font-family: 'Lora', serif;
+}
+
+/*@media (min-width:2100px){*/
+/*    .carousel-inner{*/
+/*        width:70%;*/
+/*    }*/
+/*}*/
+
+@media (min-width: 768px) {
+    .carousel {
+        width: 99%; !important;/* 或者适当的百分比值 */
+    }
+}
+
+
+/*@media (max-width:1900px) and (max-width:765px){*/
+/*    #carouselExampleIndicators{*/
+/*        margin-left: -20px!important;*/
+/*    }*/
+/*}*/
+
+.mainpgcontainer {
+    line-height: 1!important;
+}

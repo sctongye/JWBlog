@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% load static %}{% load visit_count %}
+{% block title %} Welcome {% endblock title %}
+{% block css %}
+<style>
+  html, body {
+
+
+    background-color: #255b99; /* Bootstrap 主色蓝，可根据需要更改 */
+    color: white; /* 文字改为白色便于阅读 */
+  }
+  .main-container {
+      text-align: center;
+      /* background: rgba(1, 68, 146, 0.1); */
+      padding: 40px;
+
+    }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 1.3em;
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .jw-logo {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+
+  }
+
+  .rp-logo{
+    width: 30px;
+    height: auto;
+
+  }
+</style>
+{% endblock css %}
+{% block content %}
+<div class="main-container mt-5">
+    <h1>Welcome to JW's Server</h1>
+    <p>You are visiting a custom RPi5 <img src="{% static 'img/RPi5logo.png' %}" class="rp-logo"><br>powered web server</p>
+    {% include 'components/visit_counter.html' %}
+    <p>
+      <a href="http://www.wangjiayu.net" target="_blank" style="font-size: 1.2em; text-decoration: none; color: #fbffe5;">
+        👉 Go to my homepage
+      </a>
+    </p>
+    <div class="logo-container mt-5">
+      <img src="{% static 'imgs/jwlogo.png' %}" alt="JW Logo" class="jw-logo">
+    </div>
+  </div>
+{% endblock content %}

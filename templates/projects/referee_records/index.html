@@ -1,0 +1,236 @@
+{% load static %}{% load visit_count %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNZTHP1GTV"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referee Records</title>
+    <link rel="icon" type="image/x-icon" href="{% static '/referee_records/soccerfavicon.ico' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+	<link rel="stylesheet" href="{% static '/referee_records/L.Icon.Pulse.css' %}" />
+    <link rel="stylesheet" href="{% static '/referee_records/styles.css' %}">
+    <script>const STATIC_URL = "{% static 'referee_records/' %}";</script>
+    </script>
+    <style>
+      .update-btn:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .update-btn:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        .update-btn:focus {
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .update-btn.loading .fas {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3 style="text-align: center;">Referee Records</h3>
+                {% include 'components/visit_counter.html' %}
+                <button id="updateDatabase" class="btn btn-outline-light btn-sm update-btn" style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 20px; font-size: 0.9em; background: rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
+                    <i class="fas fa-sync-alt" style="margin-right: 8px;"></i>
+                    Update Database
+                </button>
+
+                <p class="menu-link" style="font-size: 12px;"><a href="http://sommersydnie.com" style="color: rgb(205, 255, 242); text-decoration: none;"> <i class="fa-solid fa-hand-point-right"></i> &nbsp; Home</a></p>
+            </div>
+
+            <div id="accordion">
+
+              <div class="card">
+                <div class="card-header" id="heading2025Spring">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2025Spring" aria-expanded="true" aria-controls="collapse2025Spring">
+                      <img style="margin-left: 6px;" src="{% static '/referee_records/pics/ncref.png' %}" width="32" height="32">&nbsp;&nbsp; 2025 Spring
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse2025Spring" class="collapse show" aria-labelledby="heading2025Spring" data-parent="#accordion">
+                  <ul class="list-2025-Spring"></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="card">
+                <div class="card-header" id="heading2024Fall">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2024Fall" aria-expanded="true" aria-controls="collapse2024Fall">
+                      <img style="margin-left: 6px;" src="{% static '/referee_records/pics/ncref.png' %}" width="32" height="32">&nbsp;&nbsp; 2024 Fall
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse2024Fall" class="collapse" aria-labelledby="heading2024Fall" data-parent="#accordion">
+                  <ul class="list-2024-Fall"></ul>
+                </div>
+              </div>
+
+
+
+              <div class="card">
+                <div class="card-header" id="heading2024Spring">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2024Spring" aria-expanded="true" aria-controls="collapse2024Spring">
+                      <img style="margin-left: 6px;" src="{% static '/referee_records/pics/alref.png' %}" width="32" height="32">&nbsp;&nbsp; 2024 Spring
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse2024Spring" class="collapse" aria-labelledby="heading2024Spring" data-parent="#accordion">
+                  <ul class="list-2024-Spring"></ul>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="heading2023Fall">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2023Fall" aria-expanded="true" aria-controls="collapse2023Fall">
+                      <img style="margin-left: 6px;" src="{% static '/referee_records/pics/alref.png' %}" width="32" height="32">&nbsp;&nbsp; 2023 Fall
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse2023Fall" class="collapse" aria-labelledby="heading2023Fall" data-parent="#accordion">
+                  <ul class="list-2023-Fall"></ul>
+                </div>
+              </div>
+
+         
+                <div class="card">
+                  <div class="card-header" id="heading2023Spring">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2023Spring" aria-expanded="true" aria-controls="collapse2023Spring">
+                        <img style="margin-left: 6px;" src="{% static '/referee_records/pics/alref.png' %}" width="32" height="32">&nbsp;&nbsp; 2023 Spring
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse2023Spring" class="collapse" aria-labelledby="heading2023Spring" data-parent="#accordion">
+                    <ul class="list-2023-Spring"></ul>
+                  </div>
+                </div>
+
+              </div>
+              
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="map"></div>
+
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fas fa-align-left"></i>
+          <span>Toggle Sidebar</span>
+        </button>
+
+    </div>
+
+    <div id="gif-container">
+        <img src="{% static '/referee_records/pics/partying_face.gif' %}" alt="Laughing GIF" id="laughing-gif">
+    </div>
+
+    
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<!-- Font Awesome JS -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+<script src="{% static '/referee_records/L.Icon.Pulse.js' %}"></script>
+
+<!-- <script src="./stores.js"></script> -->
+<script src="{% static '/referee_records/refinfo.js' %}"></script>
+<script src="{% static '/referee_records/app.js' %}"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+
+    });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const updateButton = document.getElementById('updateDatabase');
+      if (updateButton) {
+          updateButton.addEventListener('click', function() {
+              // Add loading state
+              updateButton.classList.add('loading');
+              updateButton.disabled = true;
+              const originalText = updateButton.innerHTML;
+              updateButton.innerHTML = '<i class="fas fa-sync-alt"></i> Updating...';
+  
+              fetch('/update-ref-data/', {
+                  method: 'POST',
+              })
+              .then(response => response.json())
+              .then(data => {
+                  if (data.status === 'success') {
+                      // Show success message
+                      // alert('Database updated successfully!');
+                      // Refresh the current page
+                      window.location.href = '/rr/';
+                  } else {
+                      alert('Update failed: ' + data.message);
+                  }
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+                  alert('Error updating database. Please try again.');
+              })
+              .finally(() => {
+                  // Remove loading state
+                  updateButton.classList.remove('loading');
+                  updateButton.disabled = false;
+                  updateButton.innerHTML = originalText;
+              });
+          });
+      }
+  });
+  </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNZTHP1GTV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNZTHP1GTV');
+</script>
+
+</body>
+</html>

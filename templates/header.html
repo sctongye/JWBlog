@@ -1,0 +1,53 @@
+{% load static %}
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-custom">
+  <div class="container">
+
+    <!-- 导航栏商标 -->
+    <a class="pt-1 navbar-brand" href="{% url 'frontend:index' %}" style="font-size: 14px; font-family: Consolas, monaco, monospace;">
+      <img src="{% static 'img/jwlogo2sm.png' %}" class="border border-warning rounded-circle" style="width:40px;">&nbsp;
+      <i class="fas fa-terminal"></i>
+      <span style="color:rgba(159,255,94,0.92); font-size: 10px;">me@Server</span><span>:</span><span style="color:rgba(255,225,126,0.92); font-size: 8px;">~ $</span>&nbsp;<span style="font-size: 10px; color:#d0d0d0;">export NAME=</span><span style="font-weight: bold">JW</span></a>
+
+    <!-- 导航入口 -->
+    <div>
+      <ul class="navbar-nav">
+
+        <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+        {% if user.is_superuser %}
+
+          <li class="nav-item"><a class="nav-link" href="/admin/">Admin</a></li>
+
+        {% endif %}
+
+
+        {% if user.is_authenticated %}
+          <!-- 如果用户已经登录，则显示用户名下拉框 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+
+
+
+              {{ user.username }}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+              <a class="dropdown-item" href='{% url "edit" user.id %}'>Profile</a>
+
+
+              <a class="dropdown-item" href="{% url "logout" %}">Logout</a>
+
+            </div>
+          </li>
+          <!-- 如果用户未登录，则显示 “登录” -->
+
+        {% endif %} 
+
+      </ul>
+    </div>
+
+  </div>
+</nav>

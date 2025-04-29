@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Analytics Dashboard</h1>
+
+    <div style="width: 80%; margin: 0 auto;">
+        <h2>Device Statistics</h2>
+        <canvas id="deviceChart"></canvas>
+    </div>
+
+    <div style="width: 80%; margin: 0 auto; margin-top: 50px;">
+        <h2>Access Trend (Daily)</h2>
+        <canvas id="dateChart"></canvas>
+    </div>
+
+    <script>
+        // 设备统计图表
+        const deviceCtx = document.getElementById('deviceChart').getContext('2d');
+        const deviceLabels = {{ device_labels|safe }};
+        const deviceData = {{ device_data|safe }};
+        
+        const deviceChart = new Chart(deviceCtx, {
+            type: 'bar',
+            data: {
+                labels: deviceLabels,
+                datasets: [{
+                    label: 'Device Count',
+                    data: deviceData,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // 访问趋势图表
+        const dateCtx = document.getElementById('dateChart').getContext('2d');
+        const dateLabels = {{ date_labels|safe }};
+        const dateData = {{ date_data|safe }};
+        
+        const dateChart = new Chart(dateCtx, {
+            type: 'line',
+            data: {
+                labels: dateLabels,
+                datasets: [{
+                    label: 'Daily Access Count',
+                    data: dateData,
+                    fill: false,
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
