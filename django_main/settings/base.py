@@ -22,11 +22,11 @@ sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8%9tzgbq+*!vz3iq9#4l5k(vho49g73br*7t1qy537su@7(e(p'
+SECRET_KEY = 'Your SECRET KEY'
 
 
 ALLOWED_HOSTS = ['wangjiayu.com', 'www.wangjiayu.com', '192.168.1.81', 'localhost',
-                 '71.142.126.4', '*']
+                 'Your Public IP', '*']
 
 
 # Application definition
